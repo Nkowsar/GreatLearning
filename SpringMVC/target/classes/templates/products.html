@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1"/>
+<!--    <link href="css/mystyle.css" rel="stylesheet"/>-->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <title>Product Application</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+        <a th:href="@{/products/new}"  class="btn btn-primary">Add product</a>
+        </div>
+        <div class="col-lg-3">
+            <a th:href="@{/products/delete}"  class="btn btn-primary">Delete product</a>
+        </div>
+    </div>
+    <table class="table table-stripped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Category</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="prod: ${productListDetails}">
+            <td th:text="${prod.id}"/>
+            <td th:text="${prod.name}"/>
+            <td th:text="${prod.category}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

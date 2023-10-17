@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1"/>
+    <!--    <link href="css/mystyle.css" rel="stylesheet"/>-->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <title>Product Application</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 container justify-content-center card">
+            <h1 class="text-center">Create Product</h1>
+            <div class="card-body">
+                <form th:action="@{/savedelete}" th:object="${product}" method="post">
+                    <div class="form-group">
+                        <label>Product id</label>
+                        <input
+                                type="text"
+                                name="id"
+                                th:field="*{id}"
+                                class="form-control"
+                                placeholder="Enter id"
+                        >
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Delete
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
